@@ -1,0 +1,38 @@
+#!/bin/bash
+set -e
+
+cd ~/Downloads
+all_file=$(ls)
+
+videos=(*.mp4 *.m4a)
+for file in "${videos[@]}"; do
+    if [ -f "$file" ]; then
+        mkdir -p ~/Videos/Downloads
+        mv "$file" ~/Videos/Downloads
+    fi
+done
+
+docs=(*.pdf *.txt *.doc *.docx *.odt )
+for file in "${docs[@]}"; do
+    if [ -f "$file" ]; then
+        mkdir -p ~/Documents
+        mv "$file" ~/Documents
+    fi
+done
+
+photos=(*.jpg *.jpeg *.png *.gif *.bmp *.tiff)
+for file in "${photos[@]}"; do
+    if [ -f "$file" ]; then
+        mkdir -p ~/Photos
+        mv "$file" ~/Photos
+    fi
+done
+
+musics=(*.mp3 *.wav *.flac *.aac *.ogg)
+for file in "${musics[@]}"; do
+    if [ -f "$file" ]; then
+        mkdir -p ~/Music
+        mv "$file" ~/Music
+    fi
+done
+
